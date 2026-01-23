@@ -20,8 +20,8 @@ client = Billingrails(
 )
 
 # List accounts
-accounts_response = client.accounts.list()
-print(accounts_response["accounts"])
+list_response = client.accounts.list()
+print(list_response["accounts"])
 
 # Create an account
 create_response = client.accounts.create({
@@ -73,70 +73,6 @@ client = Billingrails(
 )
 ```
 
-## API Resources
-
-The SDK organizes resources into namespaces for better structure:
-
-### Top-level Resources
-
-- `client.accounts` - Account management
-- `client.credit_grants` - Credit grant operations
-- `client.discounts` - Discount management
-- `client.fees` - Fee operations
-- `client.invoices` - Invoice management
-- `client.payments` - Payment operations
-- `client.payment_pages` - Payment page management
-
-### Biller Namespace
-
-- `client.biller.events` - Event tracking
-- `client.biller.meters` - Meter management
-- `client.biller.plans` - Plan configuration
-- `client.biller.subscriptions` - Subscription management
-
-### Seller Namespace
-
-- `client.seller.products` - Product catalog
-- `client.seller.orders` - Order management
-
-## Examples
-
-### Working with Biller Resources
-
-```python
-# Create a subscription
-subscription = client.biller.subscriptions.create({
-    "account_id": "acc_123",
-    "plan_id": "plan_456",
-    "start_date": "2026-01-01"
-})
-
-# Track an event
-event = client.biller.events.create({
-    "account_id": "acc_123",
-    "meter_id": "meter_789",
-    "value": 100
-})
-```
-
-### Working with Seller Resources
-
-```python
-# Create a product
-product = client.seller.products.create({
-    "name": "Premium Widget",
-    "price": 9999,
-    "currency": "USD"
-})
-
-# Create an order
-order = client.seller.orders.create({
-    "account_id": "acc_123",
-    "product_id": product["id"],
-    "quantity": 2
-})
-```
-
 ## Error Handling
 
 ```python
@@ -146,7 +82,7 @@ import requests
 client = Billingrails(api_key="your-api-key")
 
 try:
-    account = client.accounts.retrieve("acc_123")
+    retrieve_response = client.accounts.retrieve("acc_123")
 except requests.exceptions.HTTPError as e:
     print(f"HTTP error occurred: {e}")
 except requests.exceptions.RequestException as e:
@@ -176,3 +112,11 @@ mypy billingrails/
 ## License
 
 MIT
+
+## Support
+
+For support, please contact [ugo@billingrails.com](mailto:ugo@billingrails.com) or visit our [documentation](https://docs.billingrails.com).
+
+## Todo
+
+- Improve error handling
