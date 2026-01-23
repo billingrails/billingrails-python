@@ -20,32 +20,38 @@ client = Billingrails(
 )
 
 # List accounts
-accounts = client.accounts.list()
+accounts_response = client.accounts.list()
+print(accounts_response["accounts"])
 
 # Create an account
-account = client.accounts.create({
+create_response = client.accounts.create({
     "name": "John Doe",
     "email": "john@example.com",
     "country": "US",
     "default_currency": "USD"
 })
+print(create_response["account"])
 
 # Retrieve an account
-retrieved_account = client.accounts.retrieve("acc_123")
+retrieve_response = client.accounts.retrieve("acc_123")
+print(retrieve_response["account"])
 
 # Update an account
-updated_account = client.accounts.update("acc_123", {
+update_response = client.accounts.update("acc_123", {
     "name": "Jane Doe"
 })
+print(update_response["account"])
 
 # Get account balances
-balances = client.accounts.get_balances("acc_123")
+balances_response = client.accounts.get_balances("acc_123")
+print(balances_response["balances"])
 
 # Debit an account
-debit_result = client.accounts.debit("acc_123", {
+debit_response = client.accounts.debit("acc_123", {
     "amount": 1000,  # Amount in cents
     "currency": "USD"
 })
+print(debit_response["balances"])
 ```
 
 ## Configuration
