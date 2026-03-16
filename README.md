@@ -1,6 +1,6 @@
 # Billingrails Python SDK
 
-Official Python SDK for [Billingrails](https://billingrails.com) - Flexible, composable, and intuitive API-first commerce platform.
+Official Python SDK for [Billingrails](https://billingrails.com)
 
 [![PyPI Version](https://img.shields.io/pypi/v/billingrails?color=blue)](https://pypi.org/project/billingrails/0.1.0/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
