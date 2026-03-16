@@ -92,26 +92,6 @@ except requests.exceptions.RequestException as e:
     print(f"Error occurred: {e}")
 ```
 
-## Development
-
-```bash
-# Install in development mode
-pip install -e .
-
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-pytest
-
-# Format code
-black billingrails/
-isort billingrails/
-
-# Type checking
-mypy billingrails/
-```
-
 ## License
 
 MIT - See [LICENSE](LICENSE) file for details
@@ -119,7 +99,3 @@ MIT - See [LICENSE](LICENSE) file for details
 ## Support
 
 For support, please contact [ugo@billingrails.com](mailto:ugo@billingrails.com) or visit our [documentation](https://docs.billingrails.com).
-
-## Todo
-
-- Improve error handling
