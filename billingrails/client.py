@@ -2,8 +2,8 @@
 Billingrails API Client
 """
 
-import requests
 from typing import Any
+import requests
 
 from .resources.accounts import AccountsResource
 from .resources.credit_grants import CreditGrantsResource
@@ -12,33 +12,16 @@ from .resources.events import EventsResource
 from .resources.fees import FeesResource
 from .resources.invoices import InvoicesResource
 from .resources.meters import MetersResource
-from .resources.orders import OrdersResource
-from .resources.payment_pages import PaymentPagesResource
 from .resources.payments import PaymentsResource
+from .resources.payment_links import PaymentLinksResource
+from .resources.checkout_sessions import CheckoutSessionsResource
 from .resources.plans import PlansResource
-from .resources.products import ProductsResource
 from .resources.subscriptions import SubscriptionsResource
+from .resources.prices import PricesResource
+from .resources.tax_rates import TaxRatesResource
 
 DEFAULT_TIMEOUT = 30
 DEFAULT_MAX_RETRIES = 3
-
-
-class BillerNamespace:
-    """Biller-specific resources"""
-    
-    def __init__(self, client: "Billingrails"):
-        self.events = EventsResource(client)
-        self.meters = MetersResource(client)
-        self.plans = PlansResource(client)
-        self.subscriptions = SubscriptionsResource(client)
-
-
-class SellerNamespace:
-    """Seller-specific resources"""
-    
-    def __init__(self, client: "Billingrails"):
-        self.products = ProductsResource(client)
-        self.orders = OrdersResource(client)
 
 
 class Billingrails:
@@ -62,16 +45,21 @@ class Billingrails:
 
         # Top-level resources
         self.accounts = AccountsResource(self)
+        self.payments = PaymentsResource(self)
+        self.payment_links = PaymentLinksResource(self)
+        self.checkout_sessions = CheckoutSessionsResource(self)
+
+        self.subscriptions = SubscriptionsResource(self)
+        self.plans = PlansResource(self)
+        self.fees = FeesResource(self)
+        self.prices = PricesResource(self)
+        self.events = EventsResource(self)
+        self.meters = MetersResource(self)
+        self.invoices = InvoicesResource(self)
+
         self.credit_grants = CreditGrantsResource(self)
         self.discounts = DiscountsResource(self)
-        self.fees = FeesResource(self)
-        self.invoices = InvoicesResource(self)
-        self.payments = PaymentsResource(self)
-        self.payment_pages = PaymentPagesResource(self)
-
-        # Nested namespaces
-        self.biller = BillerNamespace(self)
-        self.seller = SellerNamespace(self)
+        self.tax_rates = TaxRatesResource(self)
 
     def request(self, method: str, path: str, **kwargs) -> Any:
         """Make an HTTP request with retry logic"""

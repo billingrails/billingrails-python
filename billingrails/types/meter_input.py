@@ -1,4 +1,4 @@
-# This file is auto-generated. Do not edit manually.
+"""This file is auto-generated. Do not edit manually."""
 
 from typing import TypedDict, Optional, List, Literal
 
@@ -10,9 +10,9 @@ class MeterInput(TypedDict, total=False):
     name: Optional[str]
     """The name of the event to track usage for."""
     event_name: Optional[str]
-    """Meter profiles define aggregation behaviors for a meter."""
-    profiles: Optional[List[MeterProfile]]
     """Internal description of the meter."""
     description: Optional[str]
     """Defines the connection between event data and Billingrails accounts."""
     account_mapping: Optional[dict]
+    """Meter profiles define aggregation behaviors for a meter."""
+    profiles: Optional[List[MeterProfile]]

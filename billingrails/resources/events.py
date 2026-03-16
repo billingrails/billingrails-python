@@ -1,4 +1,4 @@
-# This file is auto-generated. Do not edit manually.
+"""This file is auto-generated. Do not edit manually."""
 
 from typing import Dict, Any
 
@@ -18,10 +18,10 @@ class EventsResource:
         """Ingest event
         
         Ingests an event."""
-        return self.client.request("POST", f"/biller/events/ingest", json=data)
+        return self.client.request("POST", f"/events/ingest", json=data)
 
     def ingest_batch(self, data: EventBatchInput) -> Dict[str, Any]:
         """Ingest batch events
         
         Ingests batch events."""
-        return self.client.request("POST", f"/biller/events/batch", json=data)
+        return self.client.request("POST", f"/events/batch", json=data)

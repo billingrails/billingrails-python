@@ -1,4 +1,4 @@
-# This file is auto-generated. Do not edit manually.
+"""This file is auto-generated. Do not edit manually."""
 
 from typing import Dict, Any
 
@@ -33,12 +33,6 @@ class CreditGrantsResource:
         Retrieves a credit grant by ID."""
         return self.client.request("GET", f"/credit_grants/{id}", params=params)
 
-    def reverse_transaction(self, id: str, data: Dict[str, Any]) -> CreditGrantResponse:
-        """Reverse credit grant transaction
-        
-        Reverses a credit grant usage."""
-        return self.client.request("POST", f"/credit_grants/{id}/reverse_transaction", json=data)
-
     def apply(self, id: str, data: Dict[str, Any]) -> CreditGrantResponse:
         """Apply credit grant
         
@@ -50,3 +44,9 @@ class CreditGrantsResource:
         
         Expires a credit grant."""
         return self.client.request("POST", f"/credit_grants/{id}/expire", json={})
+
+    def reverse_transaction(self, id: str, data: Dict[str, Any]) -> CreditGrantResponse:
+        """Reverse credit grant transaction
+        
+        Reverses a credit grant usage."""
+        return self.client.request("POST", f"/credit_grants/{id}/reverse_transaction", json=data)

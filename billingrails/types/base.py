@@ -1,4 +1,4 @@
-# This file is auto-generated. Do not edit manually.
+""This file is auto-generated. Do not edit manually."""
 
 from typing import TypedDict, Optional, List
 

@@ -1,4 +1,4 @@
-# This file is auto-generated. Do not edit manually.
+"""This file is auto-generated. Do not edit manually."""
 
 from ..types import (
     DiscountCreate,
@@ -14,18 +14,6 @@ class DiscountsResource:
     def __init__(self, client):
         self.client = client
 
-    def retrieve(self, id: str, **params) -> DiscountResponse:
-        """Retrieve discount
-        
-        Retrieves a discount by ID."""
-        return self.client.request("GET", f"/discounts/{id}", params=params)
-
-    def update(self, id: str, data: DiscountUpdate) -> DiscountResponse:
-        """Update a discount
-        
-        Updates a discount."""
-        return self.client.request("PUT", f"/discounts/{id}", json=data)
-
     def list(self, **params) -> DiscountListResponse:
         """List discounts
         
@@ -37,3 +25,15 @@ class DiscountsResource:
         
         Creates a discount."""
         return self.client.request("POST", f"/discounts", json=data)
+
+    def retrieve(self, id: str, **params) -> DiscountResponse:
+        """Retrieve discount
+        
+        Retrieves a discount by ID."""
+        return self.client.request("GET", f"/discounts/{id}", params=params)
+
+    def update(self, id: str, data: DiscountUpdate) -> DiscountResponse:
+        """Update a discount
+        
+        Updates a discount."""
+        return self.client.request("PUT", f"/discounts/{id}", json=data)

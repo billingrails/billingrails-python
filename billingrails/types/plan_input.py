@@ -1,27 +1,21 @@
-# This file is auto-generated. Do not edit manually.
+"""This file is auto-generated. Do not edit manually."""
 
-from typing import TypedDict, Optional, Literal
+from typing import TypedDict, Optional, List
 
-from .interval import Interval
-from .price import Price
+from .price_input import PriceInput
 
 
+"""Input for creating or updating a plan. Accepts either `price` or `prices` array (prices takes precedence)."""
 class PlanInput(TypedDict, total=False):
-    """Trial period of the plan in days."""
-    trial_period_days: Optional[int]
-    """Number of free units included."""
-    free_units: Optional[int]
     """Name of the plan."""
     name: Optional[str]
-    """Billing interval for the plan."""
-    interval: Optional[Interval]
-    """Number of billing cycles for this fee."""
-    billing_cycles: Optional[int]
-    """Name that appears on invoices for this plan."""
-    invoice_name: Optional[str]
     """Description of the plan."""
     description: Optional[str]
-    """When to bill for this fee."""
-    bill_timing: Optional[Literal["advance", "arrears"]]
-    """Price object for the plan."""
-    price: Optional[Price]
+    """Name that appears on invoices for this plan."""
+    invoice_name: Optional[str]
+    """Trial period of the plan in days."""
+    trial_period_days: Optional[int]
+    """Default price configuration for the plan. If both price and prices are provided, prices takes precedence."""
+    price: Optional[PriceInput]
+    """Additional prices for this plan. Takes precedence over the price field if both are provided."""
+    prices: Optional[List[PriceInput]]

@@ -1,4 +1,4 @@
-# This file is auto-generated. Do not edit manually.
+"""This file is auto-generated. Do not edit manually."""
 
 from typing import TypedDict, Optional, List
 
@@ -6,6 +6,6 @@ from typing import TypedDict, Optional, List
 class AccountDebitResponse(TypedDict, total=False):
     """The account ID."""
     account_id: Optional[str]
-    meta: Optional[dict]
     """Updated balances."""
     balances: Optional[List[dict]]
+    meta: Optional[dict]

@@ -1,4 +1,4 @@
-# This file is auto-generated. Do not edit manually.
+"""This file is auto-generated. Do not edit manually."""
 
 from typing import TypedDict, Optional, Literal
 
@@ -6,18 +6,12 @@ from .address import Address
 
 
 class AccountInput(TypedDict, total=False):
-    """Email of the account."""
-    email: Optional[str]
     """Type of account."""
     type: Optional[Literal["individual", "organization"]]
-    """Invoice settings for the account."""
-    invoice_settings: Optional[dict]
-    """Additional data related to the account."""
-    metadata: Optional[dict]
-    """Shipping address of the account."""
-    shipping_address: Optional[Address]
     """Name of the account."""
     name: Optional[str]
+    """Email of the account."""
+    email: Optional[str]
     """Country of the account."""
     country: Optional[str]
     """Default currency of the account."""
@@ -26,5 +20,11 @@ class AccountInput(TypedDict, total=False):
     external_id: Optional[str]
     """Timezone for the account."""
     timezone: Optional[str]
+    """Shipping address of the account."""
+    shipping_address: Optional[Address]
     """Billing address of the account."""
     billing_address: Optional[Address]
+    """Invoice settings for the account."""
+    invoice_settings: Optional[dict]
+    """Key-value pairs that can be used to store additional information."""
+    metadata: Optional[dict]

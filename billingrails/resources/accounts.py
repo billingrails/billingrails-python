@@ -1,6 +1,4 @@
-# This file is auto-generated. Do not edit manually.
-
-from typing import Dict, Any
+"""This file is auto-generated. Do not edit manually."""
 
 from ..types import (
     AccountBalancesResponse,
@@ -18,6 +16,18 @@ class AccountsResource:
 
     def __init__(self, client):
         self.client = client
+
+    def list(self, **params) -> AccountListResponse:
+        """List accounts
+        
+        Retrieve a list of accounts."""
+        return self.client.request("GET", f"/accounts", params=params)
+
+    def create(self, data: AccountCreate) -> AccountResponse:
+        """Create an account
+        
+        Creates an account."""
+        return self.client.request("POST", f"/accounts", json=data)
 
     def retrieve(self, id: str, **params) -> AccountResponse:
         """Retrieve an account
@@ -42,15 +52,3 @@ class AccountsResource:
         
         Debits an account's balance."""
         return self.client.request("POST", f"/accounts/{id}/debit", json=data)
-
-    def list(self, **params) -> AccountListResponse:
-        """List accounts
-        
-        Retrieve a list of accounts."""
-        return self.client.request("GET", f"/accounts", params=params)
-
-    def create(self, data: AccountCreate) -> AccountResponse:
-        """Create an account
-        
-        Creates an account."""
-        return self.client.request("POST", f"/accounts", json=data)
