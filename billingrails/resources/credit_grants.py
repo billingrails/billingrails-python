@@ -21,7 +21,7 @@ class CreditGrantsResource:
         Retrieves a list of credit grants."""
         return self.client.request("GET", f"/credit_grants")
 
-    def create(self, data: CreditGrantCreate) -> CreditGrantResponse:
+    def create(self, data: CreditGrantCreate) -> Dict[str, Any]:
         """Create a credit grant
         
         Creates a credit grant."""

@@ -7,3 +7,4 @@ from .plan import Plan
 
 class PlanResponse(TypedDict, total=False):
     plan: Optional[Plan]
+    meta: Optional[dict]

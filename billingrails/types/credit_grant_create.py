@@ -22,8 +22,8 @@ class CreditGrantCreate(TypedDict, total=False):
     description: Optional[str]
     """Date when the credit grant expires."""
     expires_at: Optional[str]
-    """Whether to create a payment link for the credit grant. Requires `integration_id`."""
-    with_payment_link: Optional[bool]
+    """Initialize payment for the credit grant and return the providers payment URL."""
+    initiate_payment: Optional[bool]
     """Integration ID for payment processing."""
     integration_id: Optional[str]
     """Payment methods to show on the payment link."""

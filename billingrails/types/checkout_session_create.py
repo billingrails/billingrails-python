@@ -16,10 +16,12 @@ class CheckoutSessionCreate(TypedDict, total=False):
     integration_id: Optional[str]
     """URL to redirect after payment completion."""
     return_url: Optional[str]
-    """If true, creates a payment and returns a payment link along with the checkout session."""
-    with_payment_link: Optional[bool]
+    """Directly initialize payment for the checkout and return the providers payment URL."""
+    initiate_payment: Optional[bool]
     """Allowed payment methods."""
     allowed_payment_methods: Optional[List[str]]
+    """If true, creates a preview checkout session for testing purposes."""
+    preview: Optional[bool]
     """Line items for the checkout session."""
     line_items: List[dict]
     """Discounts to apply to the checkout session."""

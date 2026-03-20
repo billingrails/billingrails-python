@@ -20,7 +20,6 @@ from .checkout_session_update import CheckoutSessionUpdate
 from .credit_grant import CreditGrant
 from .credit_grant_create import CreditGrantCreate
 from .credit_grant_list_response import CreditGrantListResponse
-from .credit_grant_pay_response import CreditGrantPayResponse
 from .credit_grant_response import CreditGrantResponse
 from .discount import Discount
 from .discount_create import DiscountCreate
@@ -46,6 +45,13 @@ from .fee_input import FeeInput
 from .fee_list_response import FeeListResponse
 from .fee_response import FeeResponse
 from .fee_update import FeeUpdate
+from .plan import Plan
+from .plan_item import PlanItem
+from .plan_input import PlanInput
+from .plan_create import PlanCreate
+from .plan_update import PlanUpdate
+from .plan_list_response import PlanListResponse
+from .plan_response import PlanResponse
 from .invoice import Invoice
 from .invoice_create import InvoiceCreate
 from .invoice_input import InvoiceInput
@@ -73,12 +79,12 @@ from .payment_link_input import PaymentLinkInput
 from .payment_link_list_response import PaymentLinkListResponse
 from .payment_link_response import PaymentLinkResponse
 from .payment_link_update import PaymentLinkUpdate
-from .plan import Plan
-from .plan_create import PlanCreate
-from .plan_input import PlanInput
-from .plan_list_response import PlanListResponse
-from .plan_response import PlanResponse
-from .plan_update import PlanUpdate
+from .product import Product
+from .product_create import ProductCreate
+from .product_input import ProductInput
+from .product_list_response import ProductListResponse
+from .product_response import ProductResponse
+from .product_update import ProductUpdate
 from .price import Price
 from .price_input import PriceInput
 from .price_create import PriceCreate
@@ -113,7 +119,6 @@ __all__ = [
     "CreditGrant",
     "CreditGrantCreate",
     "CreditGrantListResponse",
-    "CreditGrantPayResponse",
     "CreditGrantResponse",
     "Discount",
     "DiscountCreate",
@@ -139,6 +144,13 @@ __all__ = [
     "FeeListResponse",
     "FeeResponse",
     "FeeUpdate",
+    "Plan",
+    "PlanItem",
+    "PlanInput",
+    "PlanCreate",
+    "PlanUpdate",
+    "PlanListResponse",
+    "PlanResponse",
     "Invoice",
     "InvoiceCreate",
     "InvoiceInput",
@@ -166,12 +178,12 @@ __all__ = [
     "PaymentLinkListResponse",
     "PaymentLinkResponse",
     "PaymentLinkUpdate",
-    "Plan",
-    "PlanCreate",
-    "PlanInput",
-    "PlanListResponse",
-    "PlanResponse",
-    "PlanUpdate",
+    "Product",
+    "ProductCreate",
+    "ProductInput",
+    "ProductListResponse",
+    "ProductResponse",
+    "ProductUpdate",
     "Price",
     "PriceInput",
     "PriceCreate",

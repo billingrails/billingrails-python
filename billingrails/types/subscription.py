@@ -12,7 +12,7 @@ class Subscription(TypedDict, total=False):
     status: Optional[Literal["draft", "pending", "trialing", "active", "paused", "canceled", "expired"]]
     """Billingrails account ID associated with the subscription."""
     account_id: Optional[str]
-    """Plan ID associated with the subscription."""
+    """Plan ID when subscription was created from a plan."""
     plan_id: Optional[str]
     """Payment method ID associated with the subscription."""
     payment_method_id: Optional[str]

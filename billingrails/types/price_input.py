@@ -5,7 +5,7 @@ from typing import TypedDict, Optional, List, Literal
 from .interval import Interval
 
 
-"""Price configuration for a plan or fee."""
+"""Price configuration for a product or fee."""
 class PriceInput(TypedDict, total=False):
     """Amount in currency subunits (for flat, package, or tiered pricing)."""
     amount: Optional[int]

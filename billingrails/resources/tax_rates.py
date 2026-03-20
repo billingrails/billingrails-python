@@ -47,5 +47,5 @@ class TaxRatesResource:
     def archive(self, id: str) -> TaxRateResponse:
         """Archive a tax rate
         
-        Archives a tax rate. Sets status to archived."""
+        Archives a tax rate."""
         return self.client.request("POST", f"/tax_rates/{id}/archive", json={})

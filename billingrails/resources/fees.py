@@ -49,11 +49,11 @@ class FeesResource:
     def archive(self, id: str) -> FeeResponse:
         """Archive a fee
         
-        Archives a fee, making it inactive for new subscriptions."""
+        Archives a fee."""
         return self.client.request("POST", f"/fees/{id}/archive", json={})
 
-    def undo_archive(self, id: str) -> FeeResponse:
+    def unarchive(self, id: str) -> FeeResponse:
         """Unarchive a fee
         
-        Restores an archived fee to active status."""
+        Restores an archived fee."""
         return self.client.request("POST", f"/fees/{id}/unarchive", json={})

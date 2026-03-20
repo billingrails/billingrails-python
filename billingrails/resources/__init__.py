@@ -4,8 +4,9 @@ from .accounts import AccountsResource
 from .checkout_sessions import CheckoutSessionsResource
 from .events import EventsResource
 from .fees import FeesResource
-from .meters import MetersResource
 from .plans import PlansResource
+from .meters import MetersResource
+from .products import ProductsResource
 from .subscriptions import SubscriptionsResource
 from .tax_rates import TaxRatesResource
 from .credit_grants import CreditGrantsResource
@@ -20,8 +21,9 @@ __all__ = [
     "CheckoutSessionsResource",
     "EventsResource",
     "FeesResource",
-    "MetersResource",
     "PlansResource",
+    "MetersResource",
+    "ProductsResource",
     "SubscriptionsResource",
     "TaxRatesResource",
     "CreditGrantsResource",

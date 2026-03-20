@@ -42,11 +42,11 @@ class PricesResource:
     def archive(self, id: str) -> PriceResponse:
         """Archive a price
         
-        Archives a price, making it inactive for new subscriptions."""
+        Archives a price."""
         return self.client.request("POST", f"/prices/{id}/archive", json={})
 
-    def undo_archive(self, id: str) -> PriceResponse:
+    def unarchive(self, id: str) -> PriceResponse:
         """Unarchive a price
         
-        Restores an archived price to active status."""
+        Restores an archived price."""
         return self.client.request("POST", f"/prices/{id}/unarchive", json={})

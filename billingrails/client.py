@@ -3,6 +3,7 @@ Billingrails API Client
 """
 
 from typing import Any
+import time
 import requests
 
 from .resources.accounts import AccountsResource
@@ -15,8 +16,9 @@ from .resources.meters import MetersResource
 from .resources.payments import PaymentsResource
 from .resources.payment_links import PaymentLinksResource
 from .resources.checkout_sessions import CheckoutSessionsResource
-from .resources.plans import PlansResource
 from .resources.subscriptions import SubscriptionsResource
+from .resources.products import ProductsResource
+from .resources.plans import PlansResource
 from .resources.prices import PricesResource
 from .resources.tax_rates import TaxRatesResource
 
@@ -50,9 +52,10 @@ class Billingrails:
         self.checkout_sessions = CheckoutSessionsResource(self)
 
         self.subscriptions = SubscriptionsResource(self)
-        self.plans = PlansResource(self)
+        self.products = ProductsResource(self)
         self.fees = FeesResource(self)
         self.prices = PricesResource(self)
+        self.plans = PlansResource(self)
         self.events = EventsResource(self)
         self.meters = MetersResource(self)
         self.invoices = InvoicesResource(self)
@@ -76,8 +79,7 @@ class Billingrails:
             except requests.exceptions.RequestException as e:
                 last_exception = e
                 if attempt < self.max_retries - 1:
-                    # Exponential backoff
-                    import time
+                  # Exponential backoff
                     time.sleep(2 ** attempt)
                     continue
                 raise

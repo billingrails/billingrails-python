@@ -1,5 +1,7 @@
 """This file is auto-generated. Do not edit manually."""
 
+from typing import Dict, Any
+
 from ..types import (
     PlanCreate,
     PlanListResponse,
@@ -29,7 +31,7 @@ class PlansResource:
     def retrieve(self, id: str, **params) -> PlanResponse:
         """Retrieve a plan
         
-        Retrieves plan by ID."""
+        Retrieves a plan by ID."""
         return self.client.request("GET", f"/plans/{id}", params=params)
 
     def update(self, id: str, data: PlanUpdate) -> PlanResponse:
@@ -37,3 +39,27 @@ class PlansResource:
         
         Updates a plan."""
         return self.client.request("PUT", f"/plans/{id}", json=data)
+
+    def delete(self, id: str) -> Dict[str, Any]:
+        """Delete a plan
+        
+        Deletes a plan."""
+        return self.client.request("DELETE", f"/plans/{id}")
+
+    def archive(self, id: str) -> PlanResponse:
+        """Archive a plan
+        
+        Archives a plan."""
+        return self.client.request("POST", f"/plans/{id}/archive", json={})
+
+    def unarchive(self, id: str) -> PlanResponse:
+        """Unarchive a plan
+        
+        Restores an archived plan."""
+        return self.client.request("POST", f"/plans/{id}/unarchive", json={})
+
+    def duplicate(self, id: str) -> PlanResponse:
+        """Duplicate a plan
+        
+        Creates a new plan with the same attributes and items. The new plan's origin_id is set to the source plan."""
+        return self.client.request("POST", f"/plans/{id}/duplicate", json={})

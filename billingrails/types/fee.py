@@ -16,8 +16,8 @@ class Fee(TypedDict, total=False):
     code: Optional[str]
     """Description of the fee."""
     description: Optional[str]
-    """Plan ID associated with the fee."""
-    plan_id: Optional[str]
+    """Product ID associated with the fee."""
+    product_id: Optional[str]
     """Status of the fee."""
     status: Optional[Literal["active", "archived"]]
     """Invoice name of the fee."""

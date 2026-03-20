@@ -22,5 +22,7 @@ class PaymentLink(TypedDict, total=False):
     url: Optional[str]
     """URL to redirect to after payment completion."""
     return_url: Optional[str]
+    """ID of the plan for subscription links."""
+    plan_id: Optional[str]
     """Timestamp indicating when the object was created."""
     created_at: Optional[str]

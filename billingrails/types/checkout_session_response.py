@@ -6,7 +6,7 @@ from .checkout_session import CheckoutSession
 
 
 class CheckoutSessionResponse(TypedDict, total=False):
-    """URL to complete the payment. Only present when `with_payment_link` is true."""
-    payment_link: Optional[str]
+    """Provider payment URL. Only present when `initiate_payment` is `true`."""
+    payment_url: Optional[str]
     checkout_session: Optional[CheckoutSession]
     meta: Optional[dict]
