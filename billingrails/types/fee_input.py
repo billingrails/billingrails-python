@@ -11,8 +11,6 @@ class FeeInput(TypedDict, total=False):
     name: Optional[str]
     """Unique code for the fee."""
     code: Optional[str]
-    """Product ID or code associated with the fee."""
-    product_id: Optional[str]
     """Description of the fee."""
     description: Optional[str]
     """Name that appears on invoices for this fee."""

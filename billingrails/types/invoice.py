@@ -2,8 +2,8 @@
 
 from typing import TypedDict, Optional, List, Literal
 
-from .invoice_line_item import InvoiceLineItem
 from .payment_request import PaymentRequest
+from .invoice_line_item import InvoiceLineItem
 
 
 class Invoice(TypedDict, total=False):

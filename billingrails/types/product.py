@@ -3,8 +3,8 @@
 from typing import TypedDict, Optional, List, Literal
 
 from .fee import Fee
-from .interval import Interval
 from .price import Price
+from .interval import Interval
 
 
 class Product(TypedDict, total=False):

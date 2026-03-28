@@ -10,8 +10,6 @@ class FeeCreate(TypedDict, total=False):
     name: str
     """Unique code for the fee."""
     code: str
-    """Product ID or code associated with the fee."""
-    product_id: str
     """Description of the fee."""
     description: Optional[str]
     """Name that appears on invoices for this fee."""

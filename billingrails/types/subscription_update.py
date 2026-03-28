@@ -4,7 +4,7 @@ from typing import TypedDict, Optional, List, Literal
 
 
 class SubscriptionUpdate(TypedDict, total=False):
-    """Plan ID. When set, subscription is built from the plan's items. Mutually exclusive with product_id for new subscriptions."""
+    """Plan ID. When set, subscription is built from the plan's items."""
     plan_id: Optional[str]
     """Product ID (legacy). Use plan_id or items for new subscriptions."""
     product_id: Optional[str]

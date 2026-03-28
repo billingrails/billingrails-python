@@ -2,9 +2,9 @@
 
 from typing import TypedDict, Optional, Literal
 
+from .fee import Fee
 from .price import Price
 from .product import Product
-from .fee import Fee
 
 
 class PlanItem(TypedDict, total=False):
