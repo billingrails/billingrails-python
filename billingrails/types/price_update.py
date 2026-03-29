@@ -5,9 +5,8 @@ from typing import TypedDict, Optional, List, Literal
 from .interval import Interval
 
 
-"""Price update payload. Only provided fields will be updated."""
 class PriceUpdate(TypedDict, total=False):
-    """Amount in currency subunits (for flat, package, or tiered pricing)."""
+    """Amount in currency subunits (for flat, package, or per-unit pricing). Supports fractional subunits."""
     amount: Optional[int]
     """Currency code."""
     currency: str

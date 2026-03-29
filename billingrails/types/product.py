@@ -1,10 +1,9 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import TypedDict, Optional, List, Literal
+from typing import TypedDict, Optional, Literal
 
-from .fee import Fee
-from .price import Price
 from .interval import Interval
+from .price import Price
 
 
 class Product(TypedDict, total=False):
@@ -28,5 +27,3 @@ class Product(TypedDict, total=False):
     interval: Optional[Interval]
     """Default price for the product."""
     price: Optional[Price]
-    """Fees associated with the product."""
-    fees: Optional[List[Fee]]

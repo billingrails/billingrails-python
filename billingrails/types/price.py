@@ -10,7 +10,7 @@ class Price(TypedDict, total=False):
     object: Optional[Literal["price"]]
     """ID of the object."""
     id: Optional[str]
-    """Amount in currency subunits (for flat, package, or tiered pricing)."""
+    """Amount in currency subunits (for flat, package, or per-unit pricing). Supports fractional subunits for per-unit rates."""
     amount: Optional[int]
     """Currency code."""
     currency: Optional[str]

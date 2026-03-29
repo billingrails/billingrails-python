@@ -2,9 +2,9 @@
 
 from typing import TypedDict, Optional, List
 
-from .fee import Fee
+from .price import Price
 
 
-class FeeListResponse(TypedDict, total=False):
-    fees: Optional[List[Fee]]
+class PriceListResponse(TypedDict, total=False):
+    plans: Optional[List[Price]]
     meta: Optional[dict]

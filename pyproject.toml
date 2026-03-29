@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "billingrails"
-version = "0.1.4"
+version = "0.1.5"
 description = "Official Python SDK for Billingrails API"
 readme = "README.md"
 requires-python = ">=3.7"
@@ -46,3 +46,11 @@ python_version = "3.7"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = false
+
+[tool.pyright]
+pythonVersion = "3.7"
+reportMissingModuleSource = false
+
+[tool.basedpyright]
+pythonVersion = "3.7"
+reportMissingModuleSource = false

@@ -1,16 +1,17 @@
 """
-Billingrails API Client
+Billingrails API Client.
 """
 
-from typing import Any
+from typing import Any, Optional
 import time
 import requests
+
+from .errors import error_from_response, handle_api_error, should_retry_status
 
 from .resources.accounts import AccountsResource
 from .resources.credit_grants import CreditGrantsResource
 from .resources.discounts import DiscountsResource
 from .resources.events import EventsResource
-from .resources.fees import FeesResource
 from .resources.invoices import InvoicesResource
 from .resources.meters import MetersResource
 from .resources.payments import PaymentsResource
@@ -27,14 +28,19 @@ DEFAULT_MAX_RETRIES = 3
 
 
 class Billingrails:
-    """Billingrails API client with nested resource namespaces"""
+    """Billingrails API client with nested resource namespaces.
+
+    Retries only run for HTTP responses whose status is in
+    ``RETRYABLE_HTTP_STATUSES`` (see ``billingrails.errors``). Transport errors
+    are not retried.
+    """
 
     def __init__(
         self,
         api_key: str,
         base_url: str = "https://api.billingrails.com",
         timeout: int = DEFAULT_TIMEOUT,
-        max_retries: int = DEFAULT_MAX_RETRIES
+        max_retries: int = DEFAULT_MAX_RETRIES,
     ):
         self.session = requests.Session()
         self.session.headers.update({
@@ -53,7 +59,6 @@ class Billingrails:
 
         self.subscriptions = SubscriptionsResource(self)
         self.products = ProductsResource(self)
-        self.fees = FeesResource(self)
         self.prices = PricesResource(self)
         self.plans = PlansResource(self)
         self.events = EventsResource(self)
@@ -65,24 +70,38 @@ class Billingrails:
         self.tax_rates = TaxRatesResource(self)
 
     def request(self, method: str, path: str, **kwargs) -> Any:
-        """Make an HTTP request with retry logic"""
+        """Make an HTTP request with retry logic."""
         url = f"{self.base_url}{path}"
         if 'timeout' not in kwargs:
             kwargs['timeout'] = self.timeout
 
-        last_exception = None
+        last_exception: Optional[BaseException] = None
+        last_error_response: Optional[requests.Response] = None
+
         for attempt in range(self.max_retries):
             try:
                 response = self.session.request(method, url, **kwargs)
-                response.raise_for_status()
-                return response.json()
             except requests.exceptions.RequestException as e:
                 last_exception = e
-                if attempt < self.max_retries - 1:
-                  # Exponential backoff
-                    time.sleep(2 ** attempt)
-                    continue
-                raise
+                break
 
-        if last_exception:
-            raise last_exception
+            last_exception = None
+            if 200 <= response.status_code < 300:
+                if not response.content:
+                    return {}
+                text = response.text
+                if not text.strip():
+                    return {}
+                return response.json()
+
+            if attempt < self.max_retries - 1 and should_retry_status(response.status_code):
+                time.sleep(2 ** attempt)
+                continue
+
+            last_error_response = response
+            break
+
+        if last_error_response is not None:
+            raise error_from_response(last_error_response)
+        if last_exception is not None:
+            raise handle_api_error(last_exception) from last_exception

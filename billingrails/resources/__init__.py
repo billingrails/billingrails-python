@@ -3,7 +3,6 @@
 from .accounts import AccountsResource
 from .checkout_sessions import CheckoutSessionsResource
 from .events import EventsResource
-from .fees import FeesResource
 from .plans import PlansResource
 from .meters import MetersResource
 from .products import ProductsResource
@@ -20,7 +19,6 @@ __all__ = [
     "AccountsResource",
     "CheckoutSessionsResource",
     "EventsResource",
-    "FeesResource",
     "PlansResource",
     "MetersResource",
     "ProductsResource",

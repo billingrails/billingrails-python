@@ -39,12 +39,6 @@ from .event_batch_input import EventBatchInput
 from .event_batch_response import EventBatchResponse
 from .event_input import EventInput
 from .event_response import EventResponse
-from .fee import Fee
-from .fee_create import FeeCreate
-from .fee_input import FeeInput
-from .fee_list_response import FeeListResponse
-from .fee_response import FeeResponse
-from .fee_update import FeeUpdate
 from .plan import Plan
 from .plan_item import PlanItem
 from .plan_input import PlanInput
@@ -89,6 +83,7 @@ from .price import Price
 from .price_input import PriceInput
 from .price_create import PriceCreate
 from .price_update import PriceUpdate
+from .price_list_response import PriceListResponse
 from .price_response import PriceResponse
 from .subscription import Subscription
 from .subscription_create import SubscriptionCreate
@@ -138,12 +133,6 @@ __all__ = [
     "EventBatchResponse",
     "EventInput",
     "EventResponse",
-    "Fee",
-    "FeeCreate",
-    "FeeInput",
-    "FeeListResponse",
-    "FeeResponse",
-    "FeeUpdate",
     "Plan",
     "PlanItem",
     "PlanInput",
@@ -188,6 +177,7 @@ __all__ = [
     "PriceInput",
     "PriceCreate",
     "PriceUpdate",
+    "PriceListResponse",
     "PriceResponse",
     "Subscription",
     "SubscriptionCreate",

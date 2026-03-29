@@ -5,7 +5,6 @@ from typing import TypedDict, Optional, List
 from .price_input import PriceInput
 
 
-"""Input for creating or updating a product. Accepts either `price` or `prices` array (prices takes precedence)."""
 class ProductInput(TypedDict, total=False):
     """Name of the product."""
     name: Optional[str]

@@ -5,9 +5,8 @@ from typing import TypedDict, Optional, List, Literal
 from .interval import Interval
 
 
-"""Price create payload. Either product_id or fee_id is required."""
 class PriceCreate(TypedDict, total=False):
-    """Amount in currency subunits (for flat, package, or tiered pricing)."""
+    """Amount in currency subunits (for flat, package, or per-unit pricing). Supports fractional subunits."""
     amount: Optional[int]
     """Currency code."""
     currency: str
@@ -41,5 +40,3 @@ class PriceCreate(TypedDict, total=False):
     entitlements: Optional[List[dict]]
     """Product ID to associate the price with."""
     product_id: Optional[str]
-    """Fee ID to associate the price with."""
-    fee_id: Optional[str]

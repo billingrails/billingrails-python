@@ -3,7 +3,6 @@
 from typing import TypedDict, Optional, Literal
 
 
-"""Billing interval definition."""
 class Interval(TypedDict):
     """Frequency of the interval."""
     frequency: int

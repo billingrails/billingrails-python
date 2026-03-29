@@ -16,5 +16,5 @@ class SubscriptionUpdate(TypedDict, total=False):
     payment_method_id: Optional[str]
     """Billing cycle type of the subscription."""
     billing_cycle_type: Optional[Literal["anniversary", "calendar"]]
-    """Modify fee quantities for the subscription plans and fees."""
+    """Modify product quantities for the subscription plans."""
     items: Optional[List[dict]]

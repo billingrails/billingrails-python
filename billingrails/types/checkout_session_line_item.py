@@ -12,7 +12,7 @@ class CheckoutSessionLineItem(TypedDict, total=False):
     description: Optional[str]
     """Quantity of the item."""
     quantity: Optional[int]
-    """Unit amount in smallest currency unit."""
+    """Unit amount in smallest currency unit (may be fractional)."""
     unit_amount: Optional[int]
     """Total amount for the line item."""
     total_amount: Optional[int]

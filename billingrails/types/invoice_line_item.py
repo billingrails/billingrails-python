@@ -14,7 +14,7 @@ class InvoiceLineItem(TypedDict, total=False):
     description: Optional[str]
     """Quantity of the invoice item."""
     quantity: Optional[int]
-    """Unit amount of the invoice item."""
+    """Unit amount of the invoice item (smallest currency unit; may be fractional)."""
     unit_amount: Optional[int]
     """Subtotal amount of the invoice item."""
     subtotal_amount: Optional[int]

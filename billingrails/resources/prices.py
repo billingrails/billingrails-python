@@ -4,6 +4,7 @@ from typing import Dict, Any
 
 from ..types import (
     PriceCreate,
+    PriceListResponse,
     PriceResponse,
     PriceUpdate,
 )
@@ -14,6 +15,12 @@ class PricesResource:
 
     def __init__(self, client):
         self.client = client
+
+    def list(self, **params) -> PriceListResponse:
+        """List prices
+        
+        Retrieves a paginated list of prices."""
+        return self.client.request("GET", f"/prices", params=params)
 
     def create(self, data: PriceCreate) -> PriceResponse:
         """Create a price
