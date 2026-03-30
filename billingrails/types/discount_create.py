@@ -21,7 +21,7 @@ class DiscountCreate(TypedDict, total=False):
     """Whether discount can be applied to multiple billing periods."""
     recurring: Optional[bool]
     """Maximum number of billing periods discount can recur (null = forever)."""
-    max_recurring_intervals: Optional[int]
+    max_billing_cycles: Optional[int]
     """Maximum number of redemptions across all accounts."""
     max_redemptions: Optional[int]
     """Maximum number of redemptions per account."""

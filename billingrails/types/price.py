@@ -26,8 +26,6 @@ class Price(TypedDict, total=False):
     tiers: Optional[List[dict]]
     """Billing interval for this price."""
     interval: Optional[Interval]
-    """Total number of billing cycles for this price."""
-    billing_cycles: Optional[int]
     """When to bill for this price."""
     bill_timing: Optional[Literal["advance", "arrears"]]
     """Number of free units included per billing cycle."""
