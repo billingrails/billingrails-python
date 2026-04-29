@@ -1,9 +1,10 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import TypedDict, Optional, List, Literal
+from typing import List, Literal, Optional, TypedDict
 
 from .invoice_line_item import InvoiceLineItem
 from .payment_request import PaymentRequest
+from .tax_amount_details import TaxAmountDetails
 
 
 class Invoice(TypedDict, total=False):
@@ -33,6 +34,12 @@ class Invoice(TypedDict, total=False):
     total_amount: Optional[int]
     """Amount written off from the invoice."""
     write_off_amount: Optional[int]
+    """Total discount amount applied."""
+    discount_amount: Optional[int]
+    """Total discount amount percentage applied."""
+    discount_amount_percentage: Optional[int]
+    """Tax amount details."""
+    tax_amount_details: Optional[TaxAmountDetails]
     """Payment collection method for the invoice."""
     collection_method: Optional[Literal["manual", "automatic", "send_invoice"]]
     """Credit amount applied to the invoice."""

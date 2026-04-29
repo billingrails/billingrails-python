@@ -1,6 +1,6 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import TypedDict, Optional, List, Literal
+from typing import List, Literal, Optional, TypedDict
 
 
 class CreditGrantCreate(TypedDict, total=False):

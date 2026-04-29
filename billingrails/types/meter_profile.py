@@ -1,6 +1,6 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import TypedDict, Optional, List, Literal
+from typing import List, Literal, Optional, TypedDict
 
 
 class MeterProfile(TypedDict, total=False):
@@ -10,7 +10,7 @@ class MeterProfile(TypedDict, total=False):
     name: str
     """Code identifier of the meter profile."""
     code: str
-    """Whether the profile tracks recurring usage."""
+    """Defines if the meter is persisted billing period over billing period."""
     recurring: bool
     """Specifies the method for aggregating matching events."""
     aggregation_method: Literal["sum", "count", "count_unique", "min", "max", "latest"]

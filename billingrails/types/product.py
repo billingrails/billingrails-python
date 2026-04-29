@@ -1,6 +1,6 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import TypedDict, Optional, Literal
+from typing import Literal, Optional, TypedDict
 
 from .interval import Interval
 from .price import Price

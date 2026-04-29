@@ -91,6 +91,7 @@ from .subscription_input import SubscriptionInput
 from .subscription_list_response import SubscriptionListResponse
 from .subscription_response import SubscriptionResponse
 from .subscription_update import SubscriptionUpdate
+from .tax_amount_details import TaxAmountDetails
 
 __all__ = [
     "ListResponseMeta",
@@ -185,4 +186,5 @@ __all__ = [
     "SubscriptionListResponse",
     "SubscriptionResponse",
     "SubscriptionUpdate",
+    "TaxAmountDetails",
 ]

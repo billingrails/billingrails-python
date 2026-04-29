@@ -1,6 +1,6 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import TypedDict, Optional
+from typing import Optional, TypedDict
 
 from .checkout_session import CheckoutSession
 

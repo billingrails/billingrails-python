@@ -38,7 +38,7 @@ class Billingrails:
     def __init__(
         self,
         api_key: str,
-        base_url: str = "https://api.billingrails.com",
+        base_url: str = "https://api.billingrails.com/v1",
         timeout: int = DEFAULT_TIMEOUT,
         max_retries: int = DEFAULT_MAX_RETRIES,
     ):

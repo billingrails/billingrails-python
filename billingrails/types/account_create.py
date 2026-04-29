@@ -1,6 +1,6 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import TypedDict, Optional, Literal
+from typing import Literal, Optional, TypedDict
 
 from .address import Address
 
@@ -12,14 +12,8 @@ class AccountCreate(TypedDict, total=False):
     name: str
     """Email of the account."""
     email: str
-    """Country of the account."""
-    country: Optional[str]
-    """Default currency of the account."""
-    default_currency: Optional[str]
     """External unique reference ID or identifier for this account."""
     external_id: Optional[str]
-    """Timezone for the account."""
-    timezone: Optional[str]
     """Shipping address of the account."""
     shipping_address: Optional[Address]
     """Billing address of the account."""

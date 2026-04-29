@@ -1,8 +1,9 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import TypedDict, Optional, List, Literal
+from typing import List, Literal, Optional, TypedDict
 
 from .checkout_session_line_item import CheckoutSessionLineItem
+from .tax_amount_details import TaxAmountDetails
 
 
 class CheckoutSession(TypedDict, total=False):
@@ -20,8 +21,10 @@ class CheckoutSession(TypedDict, total=False):
     subtotal_amount: Optional[int]
     """Total discount amount applied."""
     discount_amount: Optional[int]
-    """Total tax amount."""
-    tax_amount: Optional[int]
+    """Total discount amount percentage applied."""
+    discount_amount_percentage: Optional[int]
+    """Tax amount details."""
+    tax_amount_details: Optional[TaxAmountDetails]
     """Total amount to be charged."""
     total_amount: Optional[int]
     """ID of the account associated with the checkout session."""

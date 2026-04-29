@@ -1,6 +1,6 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import TypedDict, Optional, Literal
+from typing import Literal, Optional, TypedDict
 
 
 class InvoiceLineItem(TypedDict, total=False):
@@ -8,6 +8,8 @@ class InvoiceLineItem(TypedDict, total=False):
     object: Optional[Literal["invoice_line_item"]]
     """ID of the invoice item."""
     id: Optional[str]
+    """ID of the usage event associated with this line item, if any."""
+    event_id: Optional[str]
     """Name of the invoice item."""
     name: Optional[str]
     """Description of the invoice item."""

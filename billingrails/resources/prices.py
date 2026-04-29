@@ -57,3 +57,9 @@ class PricesResource:
         
         Restores an archived price."""
         return self.client.request("POST", f"/prices/{id}/unarchive", json={})
+
+    def duplicate(self, id: str) -> PriceResponse:
+        """Duplicate a price
+        
+        Creates a new price with the same configuration as an existing product or fee price."""
+        return self.client.request("POST", f"/prices/{id}/duplicate", json={})
