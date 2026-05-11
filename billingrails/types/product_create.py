@@ -6,8 +6,8 @@ from .price_input import PriceInput
 
 
 class ProductCreate(TypedDict, total=False):
-    """Internal identifier of the product."""
-    code: str
+    """Optional unique identifier for the product."""
+    code: Optional[str]
     """Name of the product."""
     name: str
     """Description of the product."""

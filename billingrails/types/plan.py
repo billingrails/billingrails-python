@@ -9,6 +9,7 @@ class Plan(TypedDict, total=False):
     object: Optional[Literal["plan"]]
     id: Optional[str]
     created_at: Optional[str]
+    """Unique identifier for the plan."""
     code: Optional[str]
     name: Optional[str]
     description: Optional[str]

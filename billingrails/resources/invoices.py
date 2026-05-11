@@ -38,7 +38,7 @@ class InvoicesResource:
         """Update an invoice
         
         Updates an invoice."""
-        return self.client.request("PUT", f"/invoices/{id}", json=data)
+        return self.client.request("PATCH", f"/invoices/{id}", json=data)
 
     def issue(self, id: str, data: Dict[str, Any]) -> Dict[str, Any]:
         """Issue an invoice

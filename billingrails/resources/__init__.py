@@ -8,6 +8,8 @@ from .meters import MetersResource
 from .products import ProductsResource
 from .subscriptions import SubscriptionsResource
 from .tax_rates import TaxRatesResource
+from .charges import ChargesResource
+from .credit_assets import CreditAssetsResource
 from .credit_grants import CreditGrantsResource
 from .discounts import DiscountsResource
 from .invoices import InvoicesResource
@@ -24,6 +26,8 @@ __all__ = [
     "ProductsResource",
     "SubscriptionsResource",
     "TaxRatesResource",
+    "ChargesResource",
+    "CreditAssetsResource",
     "CreditGrantsResource",
     "DiscountsResource",
     "InvoicesResource",

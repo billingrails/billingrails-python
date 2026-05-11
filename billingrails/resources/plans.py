@@ -38,7 +38,7 @@ class PlansResource:
         """Update a plan
         
         Updates a plan."""
-        return self.client.request("PUT", f"/plans/{id}", json=data)
+        return self.client.request("PATCH", f"/plans/{id}", json=data)
 
     def delete(self, id: str) -> Dict[str, Any]:
         """Delete a plan

@@ -6,6 +6,8 @@ from .interval import Interval
 
 
 class PriceCreate(TypedDict, total=False):
+    """Optional unique code for this price."""
+    code: Optional[str]
     """Amount in currency subunits (for flat, package, or per-unit pricing). Supports fractional subunits."""
     amount: Optional[int]
     """Currency code."""

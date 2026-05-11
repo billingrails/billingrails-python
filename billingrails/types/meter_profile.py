@@ -8,8 +8,8 @@ class MeterProfile(TypedDict, total=False):
     id: Optional[str]
     """Name of the meter profile."""
     name: str
-    """Code identifier of the meter profile."""
-    code: str
+    """Unique identifier for the meter profile."""
+    code: Optional[str]
     """Defines if the meter is persisted billing period over billing period."""
     recurring: bool
     """Specifies the method for aggregating matching events."""

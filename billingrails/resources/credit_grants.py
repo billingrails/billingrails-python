@@ -45,6 +45,12 @@ class CreditGrantsResource:
         Expires a credit grant."""
         return self.client.request("POST", f"/credit_grants/{id}/expire", json={})
 
+    def void(self, id: str) -> CreditGrantResponse:
+        """Void credit grant
+        
+        Voids a credit grant that is pending or granted with its full balance unused."""
+        return self.client.request("POST", f"/credit_grants/{id}/void", json={})
+
     def reverse_transaction(self, id: str, data: Dict[str, Any]) -> CreditGrantResponse:
         """Reverse credit grant transaction
         

@@ -17,7 +17,7 @@ class Meter(TypedDict, total=False):
     """Internal description of the meter."""
     description: Optional[str]
     """Status of the meter."""
-    status: Optional[Literal["active", "inactive"]]
+    status: Optional[Literal["active", "archived"]]
     """Defines the connection between event data and Billingrails accounts."""
     account_mapping: Optional[dict]
     """Timestamp indicating when the object was created."""

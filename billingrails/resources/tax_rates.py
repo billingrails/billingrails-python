@@ -36,7 +36,7 @@ class TaxRatesResource:
         """Update a tax rate
         
         Updates a tax rate."""
-        return self.client.request("PUT", f"/tax_rates/{id}", json=data)
+        return self.client.request("PATCH", f"/tax_rates/{id}", json=data)
 
     def delete(self, id: str) -> Dict[str, Any]:
         """Delete a tax rate
@@ -49,3 +49,9 @@ class TaxRatesResource:
         
         Archives a tax rate."""
         return self.client.request("POST", f"/tax_rates/{id}/archive", json={})
+
+    def unarchive(self, id: str) -> TaxRateResponse:
+        """Unarchive a tax rate
+        
+        Unarchives a tax rate."""
+        return self.client.request("POST", f"/tax_rates/{id}/unarchive", json={})

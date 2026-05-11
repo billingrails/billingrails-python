@@ -1,6 +1,6 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import Literal, Optional, TypedDict
+from typing import List, Literal, Optional, TypedDict
 
 
 class CreditGrant(TypedDict, total=False):
@@ -28,3 +28,5 @@ class CreditGrant(TypedDict, total=False):
     effective_at: Optional[str]
     """Date when the credit grant expires."""
     expires_at: Optional[str]
+    """Catalog product IDs this grant applies to. Omit or empty for unrestricted (any product)."""
+    product_ids: Optional[List[str]]

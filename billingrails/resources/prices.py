@@ -38,7 +38,7 @@ class PricesResource:
         """Update a price
         
         Updates a price by ID."""
-        return self.client.request("PUT", f"/prices/{id}", json=data)
+        return self.client.request("PATCH", f"/prices/{id}", json=data)
 
     def delete(self, id: str) -> Dict[str, Any]:
         """Delete a price

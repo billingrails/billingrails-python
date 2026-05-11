@@ -13,7 +13,7 @@ class Product(TypedDict, total=False):
     id: Optional[str]
     """Name of the product."""
     name: Optional[str]
-    """Internal identifier of the product."""
+    """Unique identifier for the product."""
     code: Optional[str]
     """Status of the product."""
     status: Optional[Literal["draft", "active", "archived"]]

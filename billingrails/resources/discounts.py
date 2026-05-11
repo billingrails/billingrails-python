@@ -36,4 +36,16 @@ class DiscountsResource:
         """Update a discount
         
         Updates a discount."""
-        return self.client.request("PUT", f"/discounts/{id}", json=data)
+        return self.client.request("PATCH", f"/discounts/{id}", json=data)
+
+    def archive(self, id: str) -> DiscountResponse:
+        """Archive a discount
+        
+        Archives a discount."""
+        return self.client.request("POST", f"/discounts/{id}/archive", json={})
+
+    def unarchive(self, id: str) -> DiscountResponse:
+        """Unarchive a discount
+        
+        Unarchives a discount."""
+        return self.client.request("POST", f"/discounts/{id}/unarchive", json={})

@@ -38,7 +38,7 @@ class SubscriptionsResource:
         """Update a subscription
         
         Updates a subscription."""
-        return self.client.request("PUT", f"/subscriptions/{id}", json=data)
+        return self.client.request("PATCH", f"/subscriptions/{id}", json=data)
 
     def resume(self, id: str, data: Dict[str, Any]) -> CheckoutSessionResponse:
         """Resume a paused subscription

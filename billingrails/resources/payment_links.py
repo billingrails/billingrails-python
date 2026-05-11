@@ -36,4 +36,4 @@ class PaymentLinksResource:
         """Update payment link
         
         Updates a payment link."""
-        return self.client.request("PUT", f"/payment_links/{id}", json=data)
+        return self.client.request("PATCH", f"/payment_links/{id}", json=data)

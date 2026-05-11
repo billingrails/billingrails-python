@@ -29,4 +29,4 @@ class CheckoutSessionsResource:
         """Update a checkout session
         
         Updates a checkout session."""
-        return self.client.request("PUT", f"/checkout_sessions/{id}", json=data)
+        return self.client.request("PATCH", f"/checkout_sessions/{id}", json=data)

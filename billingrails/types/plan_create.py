@@ -9,5 +9,6 @@ class PlanCreate(TypedDict, total=False):
     currency: str
     trial_period_days: Optional[int]
     items: Optional[List[dict]]
-    code: str
+    """Optional unique identifier for the plan."""
+    code: Optional[str]
     account_id: Optional[str]

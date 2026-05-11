@@ -4,11 +4,14 @@ Billingrails API Client.
 
 from typing import Any, Optional
 import time
-import requests
+import requests  # pylint: disable=import-error
 
 from .errors import error_from_response, handle_api_error, should_retry_status
+from .version import user_agent
 
 from .resources.accounts import AccountsResource
+from .resources.charges import ChargesResource
+from .resources.credit_assets import CreditAssetsResource
 from .resources.credit_grants import CreditGrantsResource
 from .resources.discounts import DiscountsResource
 from .resources.events import EventsResource
@@ -46,6 +49,7 @@ class Billingrails:
         self.session.headers.update({
             "Content-Type": "application/json",
             "Authorization": f"Bearer {api_key}",
+            "User-Agent": user_agent(),
         })
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
@@ -53,19 +57,21 @@ class Billingrails:
 
         # Top-level resources
         self.accounts = AccountsResource(self)
+        self.invoices = InvoicesResource(self)
+        self.charges = ChargesResource(self)
         self.payments = PaymentsResource(self)
         self.payment_links = PaymentLinksResource(self)
         self.checkout_sessions = CheckoutSessionsResource(self)
 
-        self.subscriptions = SubscriptionsResource(self)
         self.products = ProductsResource(self)
         self.prices = PricesResource(self)
         self.plans = PlansResource(self)
-        self.events = EventsResource(self)
+        self.subscriptions = SubscriptionsResource(self)
         self.meters = MetersResource(self)
-        self.invoices = InvoicesResource(self)
+        self.events = EventsResource(self)
 
         self.credit_grants = CreditGrantsResource(self)
+        self.credit_assets = CreditAssetsResource(self)
         self.discounts = DiscountsResource(self)
         self.tax_rates = TaxRatesResource(self)
 

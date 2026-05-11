@@ -39,7 +39,7 @@ class AccountsResource:
         """Update an account
         
         Updates an account."""
-        return self.client.request("PUT", f"/accounts/{id}", json=data)
+        return self.client.request("PATCH", f"/accounts/{id}", json=data)
 
     def get_balances(self, id: str, **params) -> AccountBalancesResponse:
         """Get balances
@@ -47,8 +47,8 @@ class AccountsResource:
         Retrieve credit balances for an account."""
         return self.client.request("GET", f"/accounts/{id}/balances", params=params)
 
-    def debit(self, id: str, data: AccountDebit) -> AccountDebitResponse:
+    def debit_balance(self, id: str, data: AccountDebit) -> AccountDebitResponse:
         """Debit balance
         
         Debits an account's balance."""
-        return self.client.request("POST", f"/accounts/{id}/debit", json=data)
+        return self.client.request("POST", f"/accounts/{id}/debit_balance", json=data)

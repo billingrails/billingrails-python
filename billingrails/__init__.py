@@ -3,6 +3,7 @@ Billingrails Python SDK.
 """
 
 from .client import Billingrails
+from .version import __version__
 from .errors import (
     BillingrailsApiError,
     BillingrailsAuthenticationError,
@@ -27,6 +28,7 @@ from . import resources as _resources_module
 
 __all__ = [
     "Billingrails",
+    "__version__",
     "BillingrailsApiError",
     "BillingrailsAuthenticationError",
     "BillingrailsError",

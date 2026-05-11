@@ -32,3 +32,5 @@ class CreditGrantCreate(TypedDict, total=False):
     return_url: Optional[str]
     """Key-value pairs that can be used to store additional information."""
     metadata: Optional[dict]
+    """Catalog product IDs this grant applies to. Omit or empty for unrestricted (any product)."""
+    product_ids: Optional[List[str]]
