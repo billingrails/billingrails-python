@@ -2,9 +2,7 @@
 
 from typing import Optional, TypedDict
 
-from .price import Price
 
-
-class PriceResponse(TypedDict, total=False):
-    price: Optional[Price]
+class DeleteResponse(TypedDict, total=False):
+    deleted: Optional[bool]
     meta: Optional[dict]

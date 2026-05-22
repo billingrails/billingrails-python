@@ -10,7 +10,9 @@ from .errors import error_from_response, handle_api_error, should_retry_status
 from .version import user_agent
 
 from .resources.accounts import AccountsResource
+from .resources.benefits import BenefitsResource
 from .resources.charges import ChargesResource
+from .resources.checkout_sessions import CheckoutSessionsResource
 from .resources.credit_assets import CreditAssetsResource
 from .resources.credit_grants import CreditGrantsResource
 from .resources.discounts import DiscountsResource
@@ -19,11 +21,10 @@ from .resources.invoices import InvoicesResource
 from .resources.meters import MetersResource
 from .resources.payments import PaymentsResource
 from .resources.payment_links import PaymentLinksResource
-from .resources.checkout_sessions import CheckoutSessionsResource
-from .resources.subscriptions import SubscriptionsResource
-from .resources.products import ProductsResource
 from .resources.plans import PlansResource
 from .resources.prices import PricesResource
+from .resources.products import ProductsResource
+from .resources.subscriptions import SubscriptionsResource
 from .resources.tax_rates import TaxRatesResource
 
 DEFAULT_TIMEOUT = 30
@@ -57,22 +58,21 @@ class Billingrails:
 
         # Top-level resources
         self.accounts = AccountsResource(self)
-        self.invoices = InvoicesResource(self)
+        self.benefits = BenefitsResource(self)
         self.charges = ChargesResource(self)
+        self.checkout_sessions = CheckoutSessionsResource(self)
+        self.credit_assets = CreditAssetsResource(self)
+        self.credit_grants = CreditGrantsResource(self)
+        self.discounts = DiscountsResource(self)
+        self.events = EventsResource(self)
+        self.invoices = InvoicesResource(self)
+        self.meters = MetersResource(self)
         self.payments = PaymentsResource(self)
         self.payment_links = PaymentLinksResource(self)
-        self.checkout_sessions = CheckoutSessionsResource(self)
-
-        self.products = ProductsResource(self)
-        self.prices = PricesResource(self)
         self.plans = PlansResource(self)
+        self.prices = PricesResource(self)
+        self.products = ProductsResource(self)
         self.subscriptions = SubscriptionsResource(self)
-        self.meters = MetersResource(self)
-        self.events = EventsResource(self)
-
-        self.credit_grants = CreditGrantsResource(self)
-        self.credit_assets = CreditAssetsResource(self)
-        self.discounts = DiscountsResource(self)
         self.tax_rates = TaxRatesResource(self)
 
     def request(self, method: str, path: str, **kwargs) -> Any:

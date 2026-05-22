@@ -8,6 +8,7 @@ from ..types import (
     AccountListResponse,
     AccountResponse,
     AccountUpdate,
+    EntitlementsResponse,
 )
 
 
@@ -44,11 +45,17 @@ class AccountsResource:
     def get_balances(self, id: str, **params) -> AccountBalancesResponse:
         """Get balances
         
-        Retrieve credit balances for an account."""
+        Retrieves credit balances for an account."""
         return self.client.request("GET", f"/accounts/{id}/balances", params=params)
 
     def debit_balance(self, id: str, data: AccountDebit) -> AccountDebitResponse:
         """Debit balance
         
         Debits an account's balance."""
-        return self.client.request("POST", f"/accounts/{id}/debit_balance", json=data)
+        return self.client.request("POST", f"/accounts/{id}/debit-balance", json=data)
+
+    def get_entitlements(self, id: str, **params) -> EntitlementsResponse:
+        """Get entitlements
+        
+        Retrieves entitlements for an account grouped by benefit code."""
+        return self.client.request("GET", f"/accounts/{id}/entitlements", params=params)

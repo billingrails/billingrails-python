@@ -7,6 +7,10 @@ from .account_balances_response import AccountBalancesResponse
 from .account_create import AccountCreate
 from .account_debit import AccountDebit
 from .account_debit_response import AccountDebitResponse
+from .entitlement_benefit import EntitlementBenefit
+from .entitlement_duplicate import EntitlementDuplicate
+from .entitlement_aggregate import EntitlementAggregate
+from .entitlements_response import EntitlementsResponse
 from .account_input import AccountInput
 from .account_list_response import AccountListResponse
 from .account_response import AccountResponse
@@ -17,6 +21,11 @@ from .checkout_session_create import CheckoutSessionCreate
 from .checkout_session_line_item import CheckoutSessionLineItem
 from .checkout_session_response import CheckoutSessionResponse
 from .checkout_session_update import CheckoutSessionUpdate
+from .benefit import Benefit
+from .benefit_create import BenefitCreate
+from .benefit_update import BenefitUpdate
+from .benefit_list_response import BenefitListResponse
+from .benefit_response import BenefitResponse
 from .charge import Charge
 from .charge_response import ChargeResponse
 from .credit_asset import CreditAsset
@@ -35,6 +44,7 @@ from .discount_input import DiscountInput
 from .discount_list_response import DiscountListResponse
 from .discount_response import DiscountResponse
 from .discount_update import DiscountUpdate
+from .delete_response import DeleteResponse
 from .tax_rate import TaxRate
 from .tax_rate_input import TaxRateInput
 from .tax_rate_create import TaxRateCreate
@@ -110,6 +120,10 @@ __all__ = [
     "AccountCreate",
     "AccountDebit",
     "AccountDebitResponse",
+    "EntitlementBenefit",
+    "EntitlementDuplicate",
+    "EntitlementAggregate",
+    "EntitlementsResponse",
     "AccountInput",
     "AccountListResponse",
     "AccountResponse",
@@ -120,6 +134,11 @@ __all__ = [
     "CheckoutSessionLineItem",
     "CheckoutSessionResponse",
     "CheckoutSessionUpdate",
+    "Benefit",
+    "BenefitCreate",
+    "BenefitUpdate",
+    "BenefitListResponse",
+    "BenefitResponse",
     "Charge",
     "ChargeResponse",
     "CreditAsset",
@@ -138,6 +157,7 @@ __all__ = [
     "DiscountListResponse",
     "DiscountResponse",
     "DiscountUpdate",
+    "DeleteResponse",
     "TaxRate",
     "TaxRateInput",
     "TaxRateCreate",

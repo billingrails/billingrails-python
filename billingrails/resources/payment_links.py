@@ -18,22 +18,22 @@ class PaymentLinksResource:
         """List payment links
         
         Retrieves a list of payment links."""
-        return self.client.request("GET", f"/payment_links", params=params)
+        return self.client.request("GET", f"/payment-links", params=params)
 
     def create(self, data: PaymentLinkCreate) -> PaymentLinkResponse:
         """Create payment link
         
         Creates a new payment link."""
-        return self.client.request("POST", f"/payment_links", json=data)
+        return self.client.request("POST", f"/payment-links", json=data)
 
     def retrieve(self, id: str, **params) -> PaymentLinkResponse:
         """Retrieve payment link
         
         Retrieves a payment link by ID."""
-        return self.client.request("GET", f"/payment_links/{id}", params=params)
+        return self.client.request("GET", f"/payment-links/{id}", params=params)
 
     def update(self, id: str, data: PaymentLinkUpdate) -> PaymentLinkResponse:
         """Update payment link
         
         Updates a payment link."""
-        return self.client.request("PATCH", f"/payment_links/{id}", json=data)
+        return self.client.request("PATCH", f"/payment-links/{id}", json=data)

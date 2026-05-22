@@ -1,8 +1,7 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import Dict, Any
-
 from ..types import (
+    DeleteResponse,
     MeterCreate,
     MeterListResponse,
     MeterResponse,
@@ -40,10 +39,10 @@ class MetersResource:
         Updates a meter."""
         return self.client.request("PATCH", f"/meters/{id}", json=data)
 
-    def delete(self, id: str) -> Dict[str, Any]:
+    def delete(self, id: str) -> DeleteResponse:
         """Delete a meter
         
-        Deletes a meter when no subscription uses a price associated with it."""
+        Deletes a meter. Allowed only when no price, benefit or subscription is associated with it."""
         return self.client.request("DELETE", f"/meters/{id}")
 
     def archive(self, id: str) -> MeterResponse:

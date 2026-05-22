@@ -1,8 +1,7 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import Dict, Any
-
 from ..types import (
+    DeleteResponse,
     PlanCreate,
     PlanListResponse,
     PlanResponse,
@@ -40,10 +39,10 @@ class PlansResource:
         Updates a plan."""
         return self.client.request("PATCH", f"/plans/{id}", json=data)
 
-    def delete(self, id: str) -> Dict[str, Any]:
+    def delete(self, id: str) -> DeleteResponse:
         """Delete a plan
         
-        Deletes a plan."""
+        Deletes a plan. Allowed only when the plan has not been used in any subscription."""
         return self.client.request("DELETE", f"/plans/{id}")
 
     def archive(self, id: str) -> PlanResponse:

@@ -1,6 +1,6 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import Literal, Optional, TypedDict
+from typing import Any, Dict, Literal, Optional, TypedDict
 
 
 class CreditAsset(TypedDict, total=False):
@@ -19,4 +19,4 @@ class CreditAsset(TypedDict, total=False):
     """Pricing for paid assets. Null when the asset is promotional  only."""
     price: Optional[Any]
     """Arbitrary metadata."""
-    metadata: Optional[dict]
+    metadata: Optional[Dict[str, Any]]

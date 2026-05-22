@@ -36,5 +36,5 @@ class PriceUpdate(TypedDict, total=False):
     meter_id: Optional[str]
     """Meter profile ID to use for this price."""
     meter_profile_id: Optional[str]
-    """Feature entitlements associated with this price."""
-    entitlements: Optional[List[dict]]
+    """Benefits associated with this price."""
+    benefits: Optional[List[dict]]

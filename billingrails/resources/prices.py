@@ -1,8 +1,7 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import Dict, Any
-
 from ..types import (
+    DeleteResponse,
     PriceCreate,
     PriceListResponse,
     PriceResponse,
@@ -40,10 +39,10 @@ class PricesResource:
         Updates a price by ID."""
         return self.client.request("PATCH", f"/prices/{id}", json=data)
 
-    def delete(self, id: str) -> Dict[str, Any]:
+    def delete(self, id: str) -> DeleteResponse:
         """Delete a price
         
-        Deletes a price by ID."""
+        Deletes a price. Allowed only when it is not used in any subscription or invoices."""
         return self.client.request("DELETE", f"/prices/{id}")
 
     def archive(self, id: str) -> PriceResponse:

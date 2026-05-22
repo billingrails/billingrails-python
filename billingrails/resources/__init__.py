@@ -1,6 +1,7 @@
 """This file is auto-generated. Do not edit manually."""
 
 from .accounts import AccountsResource
+from .benefits import BenefitsResource
 from .checkout_sessions import CheckoutSessionsResource
 from .events import EventsResource
 from .plans import PlansResource
@@ -19,6 +20,7 @@ from .payment_links import PaymentLinksResource
 
 __all__ = [
     "AccountsResource",
+    "BenefitsResource",
     "CheckoutSessionsResource",
     "EventsResource",
     "PlansResource",

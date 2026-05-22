@@ -2,6 +2,7 @@
 
 from ..types import (
     ChargeResponse,
+    DeleteResponse,
 )
 
 
@@ -17,7 +18,7 @@ class ChargesResource:
         Marks a charge in `ready` status as settled. Typically used when confirming usage outside automatic credit settlement."""
         return self.client.request("POST", f"/charges/{id}/settle", json={})
 
-    def discard(self, id: str) -> ChargeResponse:
+    def discard(self, id: str) -> DeleteResponse:
         """Discard a charge
         
         Discards a `ready`charge."""

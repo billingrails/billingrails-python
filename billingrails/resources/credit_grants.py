@@ -19,40 +19,40 @@ class CreditGrantsResource:
         """List credit grants
         
         Retrieves a list of credit grants."""
-        return self.client.request("GET", f"/credit_grants")
+        return self.client.request("GET", f"/credit-grants")
 
     def create(self, data: CreditGrantCreate) -> Dict[str, Any]:
         """Create a credit grant
         
         Creates a credit grant."""
-        return self.client.request("POST", f"/credit_grants", json=data)
+        return self.client.request("POST", f"/credit-grants", json=data)
 
     def retrieve(self, id: str, **params) -> CreditGrantResponse:
         """Retrieve a credit grant
         
         Retrieves a credit grant by ID."""
-        return self.client.request("GET", f"/credit_grants/{id}", params=params)
+        return self.client.request("GET", f"/credit-grants/{id}", params=params)
 
     def apply(self, id: str, data: Dict[str, Any]) -> CreditGrantResponse:
         """Apply credit grant
         
         Applies a credit grant to an invoice or logs an external usage."""
-        return self.client.request("POST", f"/credit_grants/{id}/apply", json=data)
+        return self.client.request("POST", f"/credit-grants/{id}/apply", json=data)
 
     def expire(self, id: str) -> CreditGrantResponse:
         """Expire credit grant
         
         Expires a credit grant."""
-        return self.client.request("POST", f"/credit_grants/{id}/expire", json={})
+        return self.client.request("POST", f"/credit-grants/{id}/expire", json={})
 
     def void(self, id: str) -> CreditGrantResponse:
         """Void credit grant
         
         Voids a credit grant that is pending or granted with its full balance unused."""
-        return self.client.request("POST", f"/credit_grants/{id}/void", json={})
+        return self.client.request("POST", f"/credit-grants/{id}/void", json={})
 
     def reverse_transaction(self, id: str, data: Dict[str, Any]) -> CreditGrantResponse:
         """Reverse credit grant transaction
         
         Reverses a credit grant usage."""
-        return self.client.request("POST", f"/credit_grants/{id}/reverse_transaction", json=data)
+        return self.client.request("POST", f"/credit-grants/{id}/reverse-transaction", json=data)

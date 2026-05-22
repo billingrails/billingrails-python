@@ -10,7 +10,7 @@ class MeterProfile(TypedDict, total=False):
     name: str
     """Unique identifier for the meter profile."""
     code: Optional[str]
-    """Defines if the meter is persisted billing period over billing period."""
+    """When `true`, usage is counted across billing periods; when `false`, usage resets each period."""
     recurring: bool
     """Specifies the method for aggregating matching events."""
     aggregation_method: Literal["sum", "count", "count_unique", "min", "max", "latest"]

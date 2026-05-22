@@ -4,8 +4,6 @@ from typing import List, Optional, TypedDict
 
 
 class AccountDebitResponse(TypedDict, total=False):
-    """The account ID."""
-    account_id: Optional[str]
     """Updated balances."""
     balances: Optional[List[dict]]
     meta: Optional[dict]

@@ -2,8 +2,9 @@
 
 from typing import List, Optional, TypedDict
 
+from .benefit import Benefit
 
-class AccountBalancesResponse(TypedDict, total=False):
-    """Balances by currency."""
-    balances: Optional[List[dict]]
+
+class BenefitListResponse(TypedDict, total=False):
+    benefits: Optional[List[Benefit]]
     meta: Optional[dict]

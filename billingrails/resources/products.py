@@ -1,8 +1,7 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import Dict, Any
-
 from ..types import (
+    DeleteResponse,
     ProductCreate,
     ProductListResponse,
     ProductResponse,
@@ -40,10 +39,10 @@ class ProductsResource:
         Updates a product."""
         return self.client.request("PATCH", f"/products/{id}", json=data)
 
-    def delete(self, id: str) -> Dict[str, Any]:
+    def delete(self, id: str) -> DeleteResponse:
         """Delete a product
         
-        Deletes a product when it is not used in any subscription and not referenced on invoices."""
+        Deletes a product. Allowed only when it is not used in any subscription or invoices."""
         return self.client.request("DELETE", f"/products/{id}")
 
     def archive(self, id: str) -> ProductResponse:

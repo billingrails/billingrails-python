@@ -1,6 +1,6 @@
 """This file is auto-generated. Do not edit manually."""
 
-from typing import Optional, TypedDict
+from typing import Any, Dict, Optional, TypedDict
 
 
 class CreditAssetCreate(TypedDict, total=False):
@@ -9,6 +9,6 @@ class CreditAssetCreate(TypedDict, total=False):
     """Unique code for this asset."""
     code: str
     description: Optional[str]
-    metadata: Optional[dict]
+    metadata: Optional[Dict[str, Any]]
     """Price configuration for a paid asset. Omit for a promotional asset."""
     price: Optional[Any]

@@ -2,9 +2,9 @@
 
 from typing import Optional, TypedDict
 
-from .price import Price
+from .benefit import Benefit
 
 
-class PriceResponse(TypedDict, total=False):
-    price: Optional[Price]
+class BenefitResponse(TypedDict, total=False):
+    benefit: Optional[Benefit]
     meta: Optional[dict]

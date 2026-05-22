@@ -41,4 +41,3 @@ class Charge(TypedDict, total=False):
     proration: Optional[dict]
     amount_details: Optional[dict]
     created_at: Optional[str]
-    updated_at: Optional[str]

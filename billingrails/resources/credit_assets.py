@@ -18,22 +18,22 @@ class CreditAssetsResource:
         """List credit assets
         
         Retrieves a list of credit assets."""
-        return self.client.request("GET", f"/credit_assets", params=params)
+        return self.client.request("GET", f"/credit-assets", params=params)
 
     def create(self, data: CreditAssetCreate) -> CreditAssetResponse:
         """Create a credit asset
         
         Creates a credit asset."""
-        return self.client.request("POST", f"/credit_assets", json=data)
+        return self.client.request("POST", f"/credit-assets", json=data)
 
     def retrieve(self, id: str, **params) -> CreditAssetResponse:
         """Retrieve a credit asset
         
         Retrieves a credit asset by ID or code."""
-        return self.client.request("GET", f"/credit_assets/{id}", params=params)
+        return self.client.request("GET", f"/credit-assets/{id}", params=params)
 
     def update(self, id: str, data: CreditAssetUpdate) -> CreditAssetResponse:
         """Update a credit asset
         
         Updates a credit asset."""
-        return self.client.request("PATCH", f"/credit_assets/{id}", json=data)
+        return self.client.request("PATCH", f"/credit-assets/{id}", json=data)

@@ -17,16 +17,16 @@ class CheckoutSessionsResource:
         """Create a checkout session
         
         Creates a checkout session for processing payments."""
-        return self.client.request("POST", f"/checkout_sessions", json=data)
+        return self.client.request("POST", f"/checkout-sessions", json=data)
 
     def retrieve(self, id: str, **params) -> CheckoutSessionResponse:
         """Retrieve a checkout session
         
         Retrieves a checkout session by ID."""
-        return self.client.request("GET", f"/checkout_sessions/{id}", params=params)
+        return self.client.request("GET", f"/checkout-sessions/{id}", params=params)
 
     def update(self, id: str, data: CheckoutSessionUpdate) -> CheckoutSessionResponse:
         """Update a checkout session
         
         Updates a checkout session."""
-        return self.client.request("PATCH", f"/checkout_sessions/{id}", json=data)
+        return self.client.request("PATCH", f"/checkout-sessions/{id}", json=data)
